@@ -25,10 +25,16 @@ function MostRepeatedLetter(sentenceToCheck) {
     }
     return mostRepeatedLetter;
 }
-function CapitalizeFirstLetter(sentenceToCapitalize)
-{
+function CapitalizeFirstLetter(sentenceToCapitalize) {
     
-    
+    sentenceToCapitalize = sentenceToCapitalize.replace(/\s+/g, " ").toLowerCase().split(" ");
+
+    for (let i in sentenceToCapitalize) {
+        sentenceToCapitalize[i] = sentenceToCapitalize[i].charAt(0).toUpperCase() + sentenceToCapitalize[i].substring(1);
+    }
+    return sentenceToCapitalize.join(" ");
+
+
 }
 
 
